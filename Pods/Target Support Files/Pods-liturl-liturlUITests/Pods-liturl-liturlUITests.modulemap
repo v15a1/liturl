@@ -1,0 +1,6 @@
+framework module Pods_liturl_liturlUITests {
+  umbrella header "Pods-liturl-liturlUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
