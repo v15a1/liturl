@@ -4,19 +4,23 @@ PODS:
   - Realm/Headers (5.0.3)
   - RealmSwift (5.0.3):
     - Realm (= 5.0.3)
+  - TextFieldEffects (1.6.0)
 
 DEPENDENCIES:
   - RealmSwift
+  - TextFieldEffects
 
 SPEC REPOS:
   trunk:
     - Realm
     - RealmSwift
+    - TextFieldEffects
 
 SPEC CHECKSUMS:
   Realm: bfca1699b61b0b17c3a69ae0e648314eae91fbdb
   RealmSwift: 493c9f089cd3893b3959007973c0e4f640906ba0
+  TextFieldEffects: 529b8aff706fb40f82c41c780c0777941a893796
 
-PODFILE CHECKSUM: f820ffbe18772b4a78e94a256a583fb829f30bff
+PODFILE CHECKSUM: 3464c3cb5959e70be9221aacb2e46c45a0018b04
 
 COCOAPODS: 1.8.4

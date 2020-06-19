@@ -6,7 +6,9 @@ target 'liturl' do
   use_frameworks!
 
   # Pods for liturl
-pod 'RealmSwift'
+  pod 'RealmSwift'
+  pod 'TextFieldEffects'
+
   target 'liturlTests' do
     inherit! :search_paths
     # Pods for testing
