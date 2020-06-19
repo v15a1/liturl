@@ -8,13 +8,22 @@
 
 import Foundation
 import RealmSwift
+import Realm
 
 class DatabaseHandler{
     
     var realm : Realm
-    
+        
     init() {
         realm = try! Realm()
-//        print(Realm.Con)
+        print(Realm.Configuration.defaultConfiguration)
     }
-}
+    
+    //helper to add phrases to Realm
+    func addPhrases(_ phrase : Phrase){
+        try! realm.write{
+            realm.add(phrase)
+        }
+    }
+    
+    }

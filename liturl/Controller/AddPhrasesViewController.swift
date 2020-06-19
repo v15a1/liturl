@@ -12,6 +12,7 @@ class AddPhrasesViewController : UIViewController , UITextViewDelegate{
     
     @IBOutlet weak var addPhraseTextView: UITextField!
     var phrase : String?
+    let dbHandler :DatabaseHandler = DatabaseHandler()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +22,12 @@ class AddPhrasesViewController : UIViewController , UITextViewDelegate{
         nav?.tintColor = UIColor(named: "BlueGrey")
         nav?.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(named: "LightBackground")!]
         
-//        addPhraseTextView.delegate = self
+        let myPhrase = Phrase()
+        myPhrase.phrase = "I am adding a phrase!"
+        myPhrase.dateAdded = Date()
+        
+        dbHandler.addPhrases(myPhrase)
+        //        addPhraseTextView.delegate = self
     }
     
 }

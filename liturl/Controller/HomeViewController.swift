@@ -21,19 +21,10 @@ class HomeViewController: UIViewController {
         setBackground()
         setButtonView()
         
-        let config = Realm.Configuration(
-          schemaVersion: 1
-          )
-        Realm.Configuration.defaultConfiguration = config
-        
-        let realm = try! Realm()
-        
-        print(Realm.Configuration.defaultConfiguration)
-        
 //        var myPhrase = Phrase()
 //        myPhrase.phrase = "I am great!"
 //        myPhrase.dateAdded = Date()
-//        
+//
 //        try! realm.write{
 //            realm.add(myPhrase)
 //        }

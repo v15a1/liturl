@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		4B709DEE249B533F00238E86 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B709DED249B533F00238E86 /* Constants.swift */; };
 		4B709DF0249B53CE00238E86 /* AddPhrasesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B709DEF249B53CE00238E86 /* AddPhrasesViewController.swift */; };
-		4B709DF2249BD17E00238E86 /* DatabaseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B709DF1249BD17E00238E86 /* DatabaseHandler.swift */; };
 		4B709DF5249BDB3100238E86 /* Phrase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B709DF4249BDB3100238E86 /* Phrase.swift */; };
+		4B709DF7249CBAC000238E86 /* DatabaseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B709DF6249CBAC000238E86 /* DatabaseHandler.swift */; };
 		4BAC4938249A230800E003EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAC4937249A230800E003EE /* AppDelegate.swift */; };
 		4BAC493A249A230800E003EE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAC4939249A230800E003EE /* SceneDelegate.swift */; };
 		4BAC493C249A230800E003EE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAC493B249A230800E003EE /* HomeViewController.swift */; };
@@ -46,8 +46,8 @@
 		41917801E6DEEA3BBCF33CD7 /* Pods-liturlTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-liturlTests.debug.xcconfig"; path = "Target Support Files/Pods-liturlTests/Pods-liturlTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4B709DED249B533F00238E86 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4B709DEF249B53CE00238E86 /* AddPhrasesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhrasesViewController.swift; sourceTree = "<group>"; };
-		4B709DF1249BD17E00238E86 /* DatabaseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseHandler.swift; sourceTree = "<group>"; };
 		4B709DF4249BDB3100238E86 /* Phrase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Phrase.swift; sourceTree = "<group>"; };
+		4B709DF6249CBAC000238E86 /* DatabaseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseHandler.swift; sourceTree = "<group>"; };
 		4BAC4934249A230800E003EE /* liturl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = liturl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BAC4937249A230800E003EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4BAC4939249A230800E003EE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -112,8 +112,8 @@
 		4B709DF3249BD18500238E86 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				4B709DF1249BD17E00238E86 /* DatabaseHandler.swift */,
 				4B709DF4249BDB3100238E86 /* Phrase.swift */,
+				4B709DF6249CBAC000238E86 /* DatabaseHandler.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -444,9 +444,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B709DF0249B53CE00238E86 /* AddPhrasesViewController.swift in Sources */,
+				4B709DF7249CBAC000238E86 /* DatabaseHandler.swift in Sources */,
 				4BAC493C249A230800E003EE /* HomeViewController.swift in Sources */,
 				4BAC4938249A230800E003EE /* AppDelegate.swift in Sources */,
-				4B709DF2249BD17E00238E86 /* DatabaseHandler.swift in Sources */,
 				4BAC493A249A230800E003EE /* SceneDelegate.swift in Sources */,
 				4B709DEE249B533F00238E86 /* Constants.swift in Sources */,
 				4B709DF5249BDB3100238E86 /* Phrase.swift in Sources */,
