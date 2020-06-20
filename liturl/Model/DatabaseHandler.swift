@@ -46,4 +46,10 @@ class DatabaseHandler{
         }
         return false
     }
+    
+    func addSubscribedLanguages(_ indexes : [Int]){
+        try! realm.write{
+//            realm.add(indexes)
+        }
+    }
 }

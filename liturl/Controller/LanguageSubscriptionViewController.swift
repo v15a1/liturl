@@ -16,6 +16,7 @@ class LanguageSubscriptionViewController: UIViewController, LanguageManagerDeleg
     @IBOutlet weak var languagesTable: UITableView!
     var lanManager : LanguageManager = LanguageManager()
     var languages : [IdentifiableLanguage] = []
+    static var checkedLanguageIndexes : [Int] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,21 +44,30 @@ class LanguageSubscriptionViewController: UIViewController, LanguageManagerDeleg
 class LanguageCell: UITableViewCell {
     @IBOutlet weak var languageLabel: UILabel!
     @IBOutlet weak var checkedButton: UIButton!
+    @IBOutlet weak var languageAbbrLabel: UILabel!
     
     var isChecked : Bool = false
     
     @IBAction func checkPressed(_ sender: UIButton) {
+        let checkedItem = checkedButton.tag
         if isChecked{
             if let image = UIImage(named: "unchecked.png"){
                 checkedButton.setImage(image, for: .normal)
                 isChecked = false
+                if let foundIndex = LanguageSubscriptionViewController.checkedLanguageIndexes.firstIndex(of: checkedItem){
+                    LanguageSubscriptionViewController.checkedLanguageIndexes.remove(at: foundIndex)
+                }
+                
             }
         }else{
             if let image = UIImage(named: "checked.png"){
                 checkedButton.setImage(image, for: .normal)
                 isChecked = true
+                LanguageSubscriptionViewController.checkedLanguageIndexes.append(checkedItem)
             }
         }
+        
+        print(LanguageSubscriptionViewController.checkedLanguageIndexes)
     }
 }
 
@@ -71,6 +81,7 @@ extension LanguageSubscriptionViewController : UITableViewDelegate, UITableViewD
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.languageSubsCellID, for: indexPath) as! LanguageCell
         let language = languages[indexPath.row]
         cell.languageLabel.text = language.name
+        cell.languageAbbrLabel.text = language.language
         cell.checkedButton.tag = indexPath.row
         return cell
     }

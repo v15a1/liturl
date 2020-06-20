@@ -29,7 +29,7 @@ struct LanguageManager {
             return
           }
                     
-            self.delegate!.didUpdateUI(withArray: languagesList.languages)
+            self.delegate?.didUpdateUI(withArray: languagesList.languages)
         }
     }
 }
