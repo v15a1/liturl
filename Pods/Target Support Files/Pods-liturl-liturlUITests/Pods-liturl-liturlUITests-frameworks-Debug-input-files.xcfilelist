@@ -1,4 +1,6 @@
 ${PODS_ROOT}/Target Support Files/Pods-liturl-liturlUITests/Pods-liturl-liturlUITests-frameworks.sh
+${BUILT_PRODUCTS_DIR}/IBMSwiftSDKCore/IBMSwiftSDKCore.framework
+${BUILT_PRODUCTS_DIR}/IBMWatsonLanguageTranslatorV3/LanguageTranslator.framework
 ${BUILT_PRODUCTS_DIR}/Realm/Realm.framework
 ${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework
 ${BUILT_PRODUCTS_DIR}/TextFieldEffects/TextFieldEffects.framework

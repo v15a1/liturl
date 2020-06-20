@@ -1,4 +1,7 @@
 PODS:
+  - IBMSwiftSDKCore (1.0.0)
+  - IBMWatsonLanguageTranslatorV3 (3.5.0):
+    - IBMSwiftSDKCore (~> 1.0.0)
   - Realm (5.0.3):
     - Realm/Headers (= 5.0.3)
   - Realm/Headers (5.0.3)
@@ -7,20 +10,25 @@ PODS:
   - TextFieldEffects (1.6.0)
 
 DEPENDENCIES:
+  - IBMWatsonLanguageTranslatorV3 (~> 3.5.0)
   - RealmSwift
   - TextFieldEffects
 
 SPEC REPOS:
   trunk:
+    - IBMSwiftSDKCore
+    - IBMWatsonLanguageTranslatorV3
     - Realm
     - RealmSwift
     - TextFieldEffects
 
 SPEC CHECKSUMS:
+  IBMSwiftSDKCore: 54ad77b03a4d27b218ba514580197db3b89a96ca
+  IBMWatsonLanguageTranslatorV3: dfe75685c93fa30ea5a8f0e3d3a1275d24d03259
   Realm: bfca1699b61b0b17c3a69ae0e648314eae91fbdb
   RealmSwift: 493c9f089cd3893b3959007973c0e4f640906ba0
   TextFieldEffects: 529b8aff706fb40f82c41c780c0777941a893796
 
-PODFILE CHECKSUM: 3464c3cb5959e70be9221aacb2e46c45a0018b04
+PODFILE CHECKSUM: df759947ee56682f28e52a2c32d8733165deeca9
 
 COCOAPODS: 1.8.4

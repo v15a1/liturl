@@ -8,6 +8,7 @@ target 'liturl' do
   # Pods for liturl
   pod 'RealmSwift'
   pod 'TextFieldEffects'
+  pod 'IBMWatsonLanguageTranslatorV3', '~> 3.5.0'
 
   target 'liturlTests' do
     inherit! :search_paths
