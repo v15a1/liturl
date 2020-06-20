@@ -193,7 +193,7 @@
                                 <rect key="frame" x="20" y="170" width="374" height="34"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
                                         <color key="value" name="Background"/>
@@ -203,45 +203,70 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4HA-Xt-RNK">
+                                <rect key="frame" x="20" y="812" width="374" height="30"/>
+                                <state key="normal" title="Add Phrase"/>
+                                <connections>
+                                    <action selector="addPhrasePressed:" destination="XCd-le-iuG" eventType="touchUpInside" id="lOR-r8-YES"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="4HA-Xt-RNK" firstAttribute="leading" secondItem="SGB-q8-uUy" secondAttribute="leading" constant="20" id="3g2-W3-x3b"/>
                             <constraint firstItem="q9f-yZ-nqX" firstAttribute="leading" secondItem="SGB-q8-uUy" secondAttribute="leading" constant="20" id="6L8-bG-mFw"/>
                             <constraint firstItem="q9f-yZ-nqX" firstAttribute="leading" secondItem="SGB-q8-uUy" secondAttribute="leading" constant="20" id="ApU-ig-OdP"/>
+                            <constraint firstItem="4HA-Xt-RNK" firstAttribute="leading" secondItem="SGB-q8-uUy" secondAttribute="leading" constant="20" id="JxG-1Q-Dvi"/>
+                            <constraint firstItem="SGB-q8-uUy" firstAttribute="bottom" secondItem="4HA-Xt-RNK" secondAttribute="bottom" constant="20" id="Tu8-MU-TLs"/>
                             <constraint firstItem="SGB-q8-uUy" firstAttribute="trailing" secondItem="q9f-yZ-nqX" secondAttribute="trailing" constant="20" id="WEx-7V-etP"/>
                             <constraint firstItem="q9f-yZ-nqX" firstAttribute="top" secondItem="SGB-q8-uUy" secondAttribute="top" constant="30" id="aY5-PQ-tGT"/>
+                            <constraint firstItem="SGB-q8-uUy" firstAttribute="trailing" secondItem="4HA-Xt-RNK" secondAttribute="trailing" constant="20" id="hhV-JI-GVc"/>
                             <constraint firstItem="q9f-yZ-nqX" firstAttribute="top" secondItem="SGB-q8-uUy" secondAttribute="top" constant="50" id="sRm-Dw-KBN"/>
+                            <constraint firstItem="SGB-q8-uUy" firstAttribute="trailing" secondItem="4HA-Xt-RNK" secondAttribute="trailing" constant="20" id="tYN-ni-k8a"/>
+                            <constraint firstItem="SGB-q8-uUy" firstAttribute="bottom" secondItem="4HA-Xt-RNK" secondAttribute="bottom" constant="20" id="uaX-BD-2HT"/>
                             <constraint firstItem="SGB-q8-uUy" firstAttribute="trailing" secondItem="q9f-yZ-nqX" secondAttribute="trailing" constant="20" id="wlb-57-bZj"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="SGB-q8-uUy"/>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="Tu8-MU-TLs"/>
                                 <exclude reference="WEx-7V-etP"/>
+                                <exclude reference="hhV-JI-GVc"/>
+                                <exclude reference="tYN-ni-k8a"/>
+                                <exclude reference="uaX-BD-2HT"/>
                                 <exclude reference="wlb-57-bZj"/>
                                 <exclude reference="6L8-bG-mFw"/>
                                 <exclude reference="ApU-ig-OdP"/>
                                 <exclude reference="aY5-PQ-tGT"/>
                                 <exclude reference="sRm-Dw-KBN"/>
+                                <exclude reference="3g2-W3-x3b"/>
+                                <exclude reference="JxG-1Q-Dvi"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact-widthClass=regular">
                             <mask key="constraints">
+                                <include reference="Tu8-MU-TLs"/>
                                 <include reference="WEx-7V-etP"/>
+                                <include reference="tYN-ni-k8a"/>
                                 <include reference="6L8-bG-mFw"/>
                                 <include reference="sRm-Dw-KBN"/>
+                                <include reference="JxG-1Q-Dvi"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="constraints">
+                                <include reference="hhV-JI-GVc"/>
+                                <include reference="uaX-BD-2HT"/>
                                 <include reference="wlb-57-bZj"/>
                                 <include reference="ApU-ig-OdP"/>
                                 <include reference="aY5-PQ-tGT"/>
+                                <include reference="3g2-W3-x3b"/>
                             </mask>
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="uR2-Ej-8X6"/>
                     <connections>
-                        <outlet property="addPhraseTextView" destination="q9f-yZ-nqX" id="4F0-BG-O2O"/>
+                        <outlet property="addPhraseTextField" destination="q9f-yZ-nqX" id="g1L-oA-Wru"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K9G-wm-qbu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

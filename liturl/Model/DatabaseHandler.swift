@@ -23,7 +23,27 @@ class DatabaseHandler{
     func addPhrases(_ phrase : Phrase){
         try! realm.write{
             realm.add(phrase)
+            print("phrases added")
         }
     }
     
+    //helper to get phrases
+    func getPhrases() -> [Phrase]{
+        var phrases : [Phrase] = []
+        let dbPhrasesList = realm.objects(Phrase.self)
+        for phrase in dbPhrasesList{
+            phrases.append(phrase)
+        }
+        return phrases
     }
+    
+    func checkDuplicate(checkDuplicateOf phraseToCheck : String) -> Bool {
+        let dbPhraseList = realm.objects(Phrase.self)
+        for phrase in dbPhraseList{
+            if (phrase.phrase?.contains(phraseToCheck))!{
+                return true
+            }
+        }
+        return false
+    }
+}

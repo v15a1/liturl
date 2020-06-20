@@ -8,11 +8,14 @@
 
 import UIKit
 
-class AddPhrasesViewController : UIViewController , UITextViewDelegate{
+class AddPhrasesViewController : UIViewController, UITextFieldDelegate{
     
-    @IBOutlet weak var addPhraseTextView: UITextField!
     var phrase : String?
-    let dbHandler :DatabaseHandler = DatabaseHandler()
+    let dbHandler :DatabaseHandler =
+        DatabaseHandler()
+    var phrasesInDB : [Phrase] = []
+    
+    @IBOutlet weak var addPhraseTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,12 +25,28 @@ class AddPhrasesViewController : UIViewController , UITextViewDelegate{
         nav?.tintColor = UIColor(named: "BlueGrey")
         nav?.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(named: "LightBackground")!]
         
-        let myPhrase = Phrase()
-        myPhrase.phrase = "I am adding a phrase!"
-        myPhrase.dateAdded = Date()
-        
-        dbHandler.addPhrases(myPhrase)
-        //        addPhraseTextView.delegate = self
+        addPhraseTextField.delegate = self
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.endEditing(true)
+        return true
+    }
+    
+    @IBAction func addPhrasePressed(_ sender: Any) {
+        if let phrase = addPhraseTextField.text, addPhraseTextField.text != ""{
+            if !dbHandler.checkDuplicate(checkDuplicateOf: phrase) {
+                //adding a phrase to the DB
+                let dbPhrase = Phrase()
+                dbPhrase.dateAdded = Date()
+                dbPhrase.phrase = phrase
+                dbHandler.addPhrases(dbPhrase)
+            }else{
+                print("duplicates found")
+            }
+        }else{
+            //MARK :- Display error
+            print("failed to add items")
+        }
+    }
 }
