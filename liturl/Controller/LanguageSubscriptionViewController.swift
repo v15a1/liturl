@@ -16,6 +16,8 @@ class LanguageSubscriptionViewController: UIViewController, LanguageManagerDeleg
     @IBOutlet weak var languagesTable: UITableView!
     var lanManager : LanguageManager = LanguageManager()
     var languages : [IdentifiableLanguage] = []
+    var subsLanguages : [Language] = []
+    let dbHandler : DatabaseHandler = DatabaseHandler()
     static var checkedLanguageIndexes : [Int] = []
     
     override func viewDidLoad() {
@@ -30,13 +32,30 @@ class LanguageSubscriptionViewController: UIViewController, LanguageManagerDeleg
         languagesTable.dataSource = self
         lanManager.delegate = self
         lanManager.getLanguages()
+        subsLanguages = dbHandler.getSubscribedLanguages()
+        
+        for lan in subsLanguages{
+            LanguageSubscriptionViewController.checkedLanguageIndexes.append(lan.languageIndex)
+        }
+    }
+    
+    @IBAction func updatePressed(_ sender: Any) {
+        print("Updating subscriptions")
+        dbHandler.deleteSubscribedLanguages()
+        for index in LanguageSubscriptionViewController.checkedLanguageIndexes {
+            let language : Language = Language()
+            language.languageIndex = index
+            language.languageName = languages[index].name
+            language.languageAbbr = languages[index].language
+            dbHandler.addSubscribedLanguages(language)
+        }
     }
     
     func didUpdateUI(withArray langArray: [IdentifiableLanguage]) {
         DispatchQueue.main.async {
-            print(langArray)
             self.languages = langArray
             self.languagesTable.reloadData()
+            print("reloaded data" )
         }
     }
 }
@@ -83,6 +102,17 @@ extension LanguageSubscriptionViewController : UITableViewDelegate, UITableViewD
         cell.languageLabel.text = language.name
         cell.languageAbbrLabel.text = language.language
         cell.checkedButton.tag = indexPath.row
+        for subscribedLan in subsLanguages{
+            if subscribedLan.languageIndex == indexPath.row{
+                print("\(subscribedLan.languageName) is checked")
+                cell.isChecked = true
+                if let image = UIImage(named: "checked.png"){
+                    cell.checkedButton.setImage(image, for: .normal)
+                    cell.isChecked = true
+                }
+                break
+            }
+        }
         return cell
     }
 }

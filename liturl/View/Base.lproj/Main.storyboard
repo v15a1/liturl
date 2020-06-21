@@ -453,6 +453,9 @@
                                         <include reference="L9F-Dw-dNj"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="updatePressed:" destination="RgT-kX-412" eventType="touchUpInside" id="6fF-mt-ypU"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>

@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import RealmSwift
 
-class Language{
-    var languageName : String = ""
-    var languageAbbr : String = ""
+class Language : Object{
+    @objc dynamic var languageIndex : Int = -1
+    @objc dynamic var languageName : String = ""
+    @objc dynamic var languageAbbr : String = ""
 }
 

@@ -47,9 +47,26 @@ class DatabaseHandler{
         return false
     }
     
-    func addSubscribedLanguages(_ indexes : [Int]){
+    func addSubscribedLanguages(_ language : Language){
         try! realm.write{
-//            realm.add(indexes)
+            realm.add(language)
+        }
+    }
+    
+    func getSubscribedLanguages() -> [Language] {
+        var languages : [Language] = []
+        let dbLanguageList = realm.objects(Language.self)
+        for language in dbLanguageList {
+            languages.append(language)
+        }
+        print(languages)
+        return languages
+    }
+    
+    func deleteSubscribedLanguages (){
+        let languageObjects = realm.objects(Language.self)
+        try! realm.write{
+            realm.delete(languageObjects)
         }
     }
 }
